@@ -1,26 +1,206 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   1TAX — DESIGN TOKEN SYSTEM
+   Derived from logo: Saffron Amber + Deep Slate Teal
+   Font: Plus Jakarta Sans (display) + Inter (body)
+   ============================================================ */
+
+@theme {
+
+  /* ----------------------------------------------------------
+     COLOR — BRAND PRIMARY: Saffron Amber
+     ---------------------------------------------------------- */
+  --color-primary:       #EA8932;
+  --color-primary-light: #F5A85A;
+  --color-primary-dark:  #C4701E;
+  --color-primary-muted: #FDF0E0;
+
+  /* ----------------------------------------------------------
+     COLOR — BRAND SECONDARY: Deep Slate Teal
+     ---------------------------------------------------------- */
+  --color-secondary:       #3C5456;
+  --color-secondary-light: #4F7073;
+  --color-secondary-dark:  #2A3C3E;
+  --color-secondary-muted: #EAF0F0;
+
+  /* ----------------------------------------------------------
+     COLOR — SURFACES
+     ---------------------------------------------------------- */
+  --color-background:     #F8FAFC;
+  --color-surface:        #FFFFFF;
+  --color-surface-raised: #F1F5F4;
+
+  /* ----------------------------------------------------------
+     COLOR — TEXT
+     ---------------------------------------------------------- */
+  --color-text-primary:    #1E2B2C;
+  --color-text-secondary:  #4A5E60;
+  --color-text-muted:      #7A9496;
+  --color-text-on-primary: #FFFFFF;
+
+  /* ----------------------------------------------------------
+     COLOR — SEMANTIC
+     ---------------------------------------------------------- */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error:   #EF4444;
+  --color-info:    #3B82F6;
+
+  /* ----------------------------------------------------------
+     COLOR — BORDERS & FOCUS
+     ---------------------------------------------------------- */
+  --color-border:       #D5E0E1;
+  --color-border-focus: #EA8932;
+
+  /* ----------------------------------------------------------
+     COLOR — WHATSAPP
+     ---------------------------------------------------------- */
+  --color-whatsapp: #25D366;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — FAMILIES
+     Variables injected by next/font/google in layout.js
+     ---------------------------------------------------------- */
+  --font-sans:    var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-jakarta), system-ui, sans-serif;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — SIZE SCALE
+     ---------------------------------------------------------- */
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+  --text-4xl:  2.25rem;    /* 36px */
+  --text-5xl:  3rem;       /* 48px */
+  --text-6xl:  3.75rem;    /* 60px */
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — LINE HEIGHTS
+     ---------------------------------------------------------- */
+  --leading-tight:   1.2;
+  --leading-snug:    1.35;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — FONT WEIGHTS
+     ---------------------------------------------------------- */
+  --font-normal:    400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+  --font-extrabold: 800;
+
+  /* ----------------------------------------------------------
+     SPACING — SECTION RHYTHM
+     ---------------------------------------------------------- */
+  --spacing-section-sm: 3rem;    /* 48px  — compact sections */
+  --spacing-section:    5rem;    /* 80px  — standard sections */
+  --spacing-section-lg: 7.5rem;  /* 120px — hero / feature sections */
+
+  /* ----------------------------------------------------------
+     LAYOUT — CONTAINER MAX-WIDTHS
+     ---------------------------------------------------------- */
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1280px;
+  --container-2xl: 1440px;
+
+  /* ----------------------------------------------------------
+     BORDER RADIUS
+     Soft but not bubbly — matches the logo's professional character
+     ---------------------------------------------------------- */
+  --radius-sm:   0.25rem;   /* 4px  — badges, chips */
+  --radius-md:   0.5rem;    /* 8px  — buttons, inputs */
+  --radius-lg:   0.75rem;   /* 12px — cards */
+  --radius-xl:   1rem;      /* 16px — modals, panels */
+  --radius-2xl:  1.5rem;    /* 24px — hero cards */
+  --radius-full: 9999px;    /* pills, avatars */
+
+  /* ----------------------------------------------------------
+     SHADOWS — Teal-tinted, no harsh black drops
+     ---------------------------------------------------------- */
+  --shadow-xs:   0 1px 2px 0 rgb(60 84 86 / 0.06);
+  --shadow-sm:   0 1px 4px 0 rgb(60 84 86 / 0.08);
+  --shadow-md:   0 4px 12px 0 rgb(60 84 86 / 0.10);
+  --shadow-lg:   0 8px 24px 0 rgb(60 84 86 / 0.12);
+  --shadow-xl:   0 16px 48px 0 rgb(60 84 86 / 0.16);
+  --shadow-glow: 0 0 0 4px rgb(234 137 50 / 0.25);
+
+  /* ----------------------------------------------------------
+     ANIMATION
+     ---------------------------------------------------------- */
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   400ms;
+  --ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ============================================================
+   BASE LAYER — Sensible defaults wired to tokens
+   ============================================================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-secondary);
+  }
+
+  p {
+    line-height: var(--leading-relaxed);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  ::selection {
+    background-color: var(--color-primary-muted);
+    color: var(--color-primary-dark);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
 }
