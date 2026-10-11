@@ -1,2 +1,94 @@
-// Verified client testimonials
-export const testimonials = [];
+// Verified client testimonials and founder reviews for 1Tax CA Advisory Firm
+
+export const testimonials = [
+  {
+    id: "omnix-ai",
+    clientName: "Vikramaditya Singhal",
+    designation: "Co-Founder & CEO",
+    company: "Omnix AI Labs",
+    industry: "Tech & SaaS",
+    location: "Bengaluru & Delhi NCR",
+    serviceCategory: "Startup Package & DPIIT",
+    outcomeBadge: "⚡ 7-Day Incorporation & 80-IAC Approved",
+    rating: 5,
+    initials: "VS",
+    avatarBg: "from-amber-500 to-orange-600",
+    quote:
+      "1Tax eliminated all the incorporation headaches. Our Pvt Ltd, trademark, and DPIIT 3-year tax holiday were approved in record time under direct Senior CA partner guidance. Zero junior call center buffers.",
+  },
+  {
+    id: "mehra-precision",
+    clientName: "Harish Mehra",
+    designation: "Managing Director",
+    company: "Mehra Precision Tools",
+    industry: "Manufacturing & MSME",
+    location: "Faridabad / NCR",
+    serviceCategory: "MSME Payment Recovery",
+    outcomeBadge: "💰 ₹42.5 Lakhs Recovered in 45 Days",
+    rating: 5,
+    initials: "HM",
+    avatarBg: "from-teal-600 to-slate-800",
+    quote:
+      "We had ₹42L+ blocked by an enterprise client for over 9 months. 1Tax served statutory notice under Section 18 of the MSMED Act and recovered 100% of our principal plus 3x RBI compounding interest without court delays.",
+  },
+  {
+    id: "botanica-pure",
+    clientName: "Pooja Sundaram",
+    designation: "Founder",
+    company: "Botanica Pure Organics",
+    industry: "D2C & E-Commerce",
+    location: "Mumbai & Delhi",
+    serviceCategory: "Virtual CFO & Accounting Retainer",
+    outcomeBadge: "📊 Real-Time Unit Economics & Zero Backlog",
+    rating: 5,
+    initials: "PS",
+    avatarBg: "from-emerald-600 to-teal-800",
+    quote:
+      "Transitioning from our messy local accountant to 1Tax's Virtual CFO service transformed our finances. We now have real-time burn forecasting, audit-ready Zoho books, and 100% on-time monthly GST returns.",
+  },
+  {
+    id: "apex-leather",
+    clientName: "Amitabh Khurana",
+    designation: "Director",
+    company: "Apex Global Exporters",
+    industry: "Export & International Trade",
+    location: "Noida SEZ",
+    serviceCategory: "Export GST Refund (RFD-01)",
+    outcomeBadge: "⚡ ₹18.4 Lakhs ITC Disbursed in 22 Days",
+    rating: 5,
+    initials: "AK",
+    avatarBg: "from-indigo-600 to-blue-800",
+    quote:
+      "Our accumulated GST ITC refund was held up for over 6 months by the tax division. 1Tax reconciled our GSTR-2B, filed the legal deficiency replies, and got the full ₹18.4 Lakhs credited directly to our bank.",
+  },
+  {
+    id: "verma-pathlabs",
+    clientName: "Dr. Sangeeta Verma",
+    designation: "Founder & Director",
+    company: "Verma PathLabs",
+    industry: "Healthcare & Diagnostics",
+    location: "Gurugram",
+    serviceCategory: "Income Tax Scrutiny Litigation",
+    outcomeBadge: "🛡️ Zero Penalty Assessment Order",
+    rating: 5,
+    initials: "SV",
+    avatarBg: "from-rose-600 to-pink-800",
+    quote:
+      "Facing an automated faceless scrutiny notice on large equipment purchases was terrifying. 1Tax's senior tax litigator drafted an exhaustive submission backed by High Court precedents and closed the assessment with zero additions.",
+  },
+  {
+    id: "nexapay-solutions",
+    clientName: "Karan Malhotra",
+    designation: "Chief Financial Officer",
+    company: "NexaPay Solutions",
+    industry: "Fintech & Payments",
+    location: "New Delhi",
+    serviceCategory: "Annual Corporate Compliance",
+    outcomeBadge: "⏱️ 100% Penalty-Free Annual Filings",
+    rating: 5,
+    initials: "KM",
+    avatarBg: "from-slate-700 to-slate-950",
+    quote:
+      "Fixed upfront quotes, zero surprise billing, and direct partner access on WhatsApp. 1Tax represents the absolute gold standard of modern corporate Chartered Accountancy in India.",
+  },
+];

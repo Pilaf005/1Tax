@@ -119,17 +119,33 @@ export function HeroLeadForm() {
   );
 
   return (
-    <div
-      id="consultation-form"
-      className="relative rounded-3xl p-6 sm:p-8 border transition-all duration-300"
-      style={{
-        background: 'rgba(255, 255, 255, 0.85)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderColor: 'rgba(255, 255, 255, 0.9)',
-        boxShadow: '0 25px 50px -12px rgba(60, 84, 86, 0.16), 0 0 0 1px rgba(234, 137, 50, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9)',
-      }}
-    >
+    <div id="consultation-form" className="relative group">
+      {/* 1. BACK TILTED CARD (Uniform -2deg tilt, Deep 1Tax Corporate Teal) */}
+      <div
+        className="absolute inset-0 rounded-3xl transition-all duration-300 transform -rotate-[2deg] group-hover:-rotate-[1deg] group-hover:scale-[1.01] pointer-events-none"
+        style={{
+          background: 'linear-gradient(135deg, #0c222e 0%, #134e4a 55%, #042f2e 100%)',
+          boxShadow: '0 25px 50px -12px rgba(12, 34, 46, 0.4), 0 4px 16px -2px rgba(12, 34, 46, 0.25)',
+          border: '1px solid rgba(234, 137, 50, 0.3)',
+        }}
+      >
+        {/* Top-Right Micro Watermark on Tilted Card */}
+        <div className="absolute top-3.5 right-5 select-none opacity-30 font-mono text-[10px] font-black tracking-widest text-amber-300 uppercase">
+          SENIOR CA DIRECT INTAKE • 15-MIN CALLBACK
+        </div>
+      </div>
+
+      {/* 2. FRONT GLASSMORPHIC CARD (0deg horizontal, Frosted Glass) */}
+      <div
+        className="relative z-10 rounded-3xl p-6 sm:p-8 border transition-all duration-300 transform group-hover:-translate-y-1"
+        style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.88)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderColor: 'rgba(255, 255, 255, 0.95)',
+          boxShadow: '0 20px 45px -10px rgba(60, 84, 86, 0.16), 0 0 0 1px rgba(234, 137, 50, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9)',
+        }}
+      >
       {/* Decorative glass glow */}
       <div
         className="pointer-events-none absolute -top-10 -right-10 h-32 w-32 rounded-full blur-2xl opacity-30"
@@ -482,6 +498,7 @@ export function HeroLeadForm() {
           </div>
         </form>
       )}
+      </div>
     </div>
   );
 }
