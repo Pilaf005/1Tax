@@ -12,23 +12,23 @@ export function WhyChooseUs() {
       {/* ─────────────────────────────────────────────────────────────
           1. SECTION HEADER AREA
       ───────────────────────────────────────────────────────────── */}
-      <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-9">
+      <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-9">
         {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-orange-50 border border-orange-200/80 text-[#C25E0A] shadow-2xs mb-3">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-orange-50 border border-orange-200/80 text-[#C25E0A] shadow-2xs mb-2.5 sm:mb-3">
           <span>SENIOR CA PARTNERS &bull; ZERO CALL CENTERS</span>
         </div>
 
         {/* Main Headline */}
         <h2
           id="why-choose-us-heading"
-          className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0A2540] tracking-tight leading-tight mb-3"
+          className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0A2540] tracking-tight leading-snug sm:leading-tight mb-2 sm:mb-3"
         >
           Why Fast-Growing Businesses{" "}
           <span className="text-[#EA8932]">Trust 1Tax</span>
         </h2>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
+        <p className="text-xs sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto font-normal">
           When corporate compliance, tax scrutiny, and high-value filings are on
           the line, generic portals pass you to junior telecallers. 1Tax gives
           you direct Fellow CA partner oversight with modern digital speed.
@@ -39,8 +39,8 @@ export function WhyChooseUs() {
           2. SIDE-BY-SIDE 2-COLUMN COMPARISON CARDS
       ───────────────────────────────────────────────────────────── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7 items-stretch max-w-6xl mx-auto">
-        {/* LEFT CARD: The 1Tax Advantage (Recommended ★) */}
-        <div className="relative bg-white rounded-2xl sm:rounded-[24px] border-2 border-[#EA8932] px-5 py-5 sm:px-7 sm:py-6 shadow-[0_12px_32px_rgba(234,137,50,0.10)] flex flex-col justify-between">
+        {/* LEFT CARD: The 1Tax Advantage (Recommended ★) - order-2 on mobile, order-1 on desktop */}
+        <div className="relative bg-white rounded-2xl sm:rounded-[24px] border-2 border-[#EA8932] px-5 py-5 sm:px-7 sm:py-6 shadow-[0_12px_32px_rgba(234,137,50,0.10)] flex flex-col justify-between order-2 lg:order-1">
           {/* Floating Pill Tag on Top Border */}
           <div className="absolute -top-3.5 right-6 sm:right-8 bg-[#0A2540] text-white text-[11px] font-bold px-3 py-0.5 rounded-full shadow-md flex items-center gap-1.5 tracking-wide">
             <span>Recommended</span>
@@ -131,8 +131,8 @@ export function WhyChooseUs() {
           </div>
         </div>
 
-        {/* RIGHT CARD: Generic Portals & Aggregators (Distinct Slate Gray) */}
-        <div className="bg-[#F1F5F9] rounded-2xl sm:rounded-[24px] border border-slate-200/90 px-5 py-5 sm:px-7 sm:py-6 flex flex-col justify-between shadow-2xs">
+        {/* RIGHT CARD: Generic Portals & Aggregators (Distinct Slate Gray) - order-1 on mobile, order-2 on desktop */}
+        <div className="bg-[#F1F5F9] rounded-2xl sm:rounded-[24px] border border-slate-200/90 px-5 py-5 sm:px-7 sm:py-6 flex flex-col justify-between shadow-2xs order-1 lg:order-2">
           <div>
             {/* Header: Gray Cross + Title */}
             <div className="flex items-center gap-3 mb-4 sm:mb-5">

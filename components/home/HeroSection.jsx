@@ -27,19 +27,19 @@ export function HeroSection() {
         style={{ backgroundColor: "var(--color-secondary-light)" }}
       />
 
-      <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
+      <div className="relative mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 overflow-x-clip lg:overflow-visible">
+        <div className="grid grid-cols-1 items-center gap-10 lg:gap-10 lg:grid-cols-12">
           {/* Left Column: Copy, Value Proposition & Actions */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Top Eyebrow / Trust Pill */}
+            {/* Top Eyebrow / Trust Pill (Hidden on mobile mode only) */}
             <div
-              className="inline-flex items-center self-start mb-5 rounded-full px-3.5 py-1.5 border shadow-2xs"
+              className="hidden sm:inline-flex items-center self-start mb-4 lg:mb-5 rounded-full px-3 py-1 sm:px-3.5 sm:py-1.5 border shadow-2xs"
               style={{
                 backgroundColor: "var(--color-surface)",
                 borderColor: "var(--color-border)",
               }}
             >
-              <span className="relative flex h-2 w-2 mr-2.5">
+              <span className="relative flex h-2 w-2 mr-2">
                 <span
                   className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
                   style={{ backgroundColor: "var(--color-primary)" }}
@@ -50,27 +50,27 @@ export function HeroSection() {
                 />
               </span>
               <p
-                className="text-xs font-semibold tracking-tight flex items-center flex-wrap gap-1.5"
+                className="text-[11px] sm:text-xs font-semibold tracking-tight flex items-center flex-wrap gap-1 sm:gap-1.5"
                 style={{ color: "var(--color-text-secondary)" }}
               >
                 <span
                   className="font-bold"
                   style={{ color: "var(--color-secondary)" }}
                 >
-                  ICAI Registered Chartered Accountants
+                  ICAI Registered CAs
                 </span>
                 <span className="opacity-40">•</span>
                 <span>Pan-India Advisory</span>
                 <span className="opacity-40">•</span>
                 <span
-                  className="rounded-full px-2 py-0.5 text-[11px] font-bold"
+                  className="rounded-full px-1.5 py-0.5 text-[10px] sm:text-[11px] font-bold"
                   style={{
                     backgroundColor: "#ECFDF5",
                     color: "#047857",
                     border: "1px solid #A7F3D0",
                   }}
                 >
-                  99.4% Dispute Resolution Rate
+                  99.4% Dispute Resolution
                 </span>
               </p>
             </div>
@@ -78,7 +78,7 @@ export function HeroSection() {
             {/* Main Primary H1 Heading */}
             <h1
               id="hero-title"
-              className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-[1.18] tracking-tight mb-5"
+              className="text-2xl sm:text-3xl lg:text-[44px] font-extrabold leading-[1.22] sm:leading-[1.2] lg:leading-[1.18] tracking-tight mb-3.5 sm:mb-4 lg:mb-5"
               style={{ color: "var(--color-secondary-dark)" }}
             >
               Chartered Accountant &amp; Tax Advisory Firm for{" "}
@@ -96,7 +96,7 @@ export function HeroSection() {
 
             {/* Subheading */}
             <p
-              className="text-base sm:text-lg leading-relaxed mb-8 max-w-2xl font-normal"
+              className="text-xs sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-7 lg:mb-8 max-w-2xl font-normal"
               style={{ color: "var(--color-text-secondary)" }}
             >
               From end-to-end company registration and startup compliance to
@@ -119,18 +119,18 @@ export function HeroSection() {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 mb-7 sm:mb-8 lg:mb-10">
               {/* Primary Action */}
               <a
                 href="#consultation-form"
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl px-7 py-4 text-base font-bold text-white shadow-md transition-all hover:opacity-95 active:scale-98"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 sm:px-7 sm:py-4 text-sm sm:text-base font-bold text-white shadow-md transition-all hover:opacity-95 active:scale-98"
                 style={{
                   backgroundColor: "var(--color-primary)",
                   boxShadow: "var(--shadow-glow)",
                 }}
               >
                 <span>Get Free Consultation</span>
-                <ArrowRight size={17} />
+                <ArrowRight size={16} />
               </a>
 
               {/* Secondary Action (WhatsApp) */}
@@ -138,7 +138,7 @@ export function HeroSection() {
                 href={`https://wa.me/${WA_NUMBER}?text=${waPreFill}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl px-6 py-4 text-base font-semibold border shadow-xs transition-all hover:bg-slate-50"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 sm:px-6 sm:py-4 text-sm sm:text-base font-semibold border shadow-xs transition-all hover:bg-slate-50"
                 style={{
                   backgroundColor: "var(--color-surface)",
                   borderColor: "var(--color-border)",
@@ -146,10 +146,10 @@ export function HeroSection() {
                 }}
               >
                 <span
-                  className="flex h-7 w-7 items-center justify-center rounded-full text-white"
+                  className="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full text-white"
                   style={{ backgroundColor: "var(--color-whatsapp)" }}
                 >
-                  <MessageSquare size={14} />
+                  <MessageSquare size={13} />
                 </span>
                 <span>Chat with Senior CA</span>
               </a>
@@ -157,63 +157,63 @@ export function HeroSection() {
 
             {/* Trust Metrics Strip */}
             <div
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-5 sm:pt-6 border-t"
               style={{ borderColor: "var(--color-border)" }}
             >
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
                 <span
-                  className="text-2xl lg:text-3xl font-extrabold tracking-tight"
+                  className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight"
                   style={{ color: "var(--color-secondary)" }}
                 >
                   12+
                 </span>
                 <span
-                  className="text-xs font-medium mt-1"
+                  className="text-[11px] sm:text-xs font-medium mt-0.5 sm:mt-1"
                   style={{ color: "var(--color-text-muted)" }}
                 >
                   Years Experience
                 </span>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
                 <span
-                  className="text-2xl lg:text-3xl font-extrabold tracking-tight"
+                  className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight"
                   style={{ color: "var(--color-primary)" }}
                 >
                   ₹50Cr+
                 </span>
                 <span
-                  className="text-xs font-medium mt-1"
+                  className="text-[11px] sm:text-xs font-medium mt-0.5 sm:mt-1"
                   style={{ color: "var(--color-text-muted)" }}
                 >
                   Refunds &amp; Recoveries
                 </span>
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
                 <span
-                  className="text-2xl lg:text-3xl font-extrabold tracking-tight"
+                  className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight"
                   style={{ color: "var(--color-secondary)" }}
                 >
                   10,000+
                 </span>
                 <span
-                  className="text-xs font-medium mt-1"
+                  className="text-[11px] sm:text-xs font-medium mt-0.5 sm:mt-1"
                   style={{ color: "var(--color-text-muted)" }}
                 >
                   Compliance Filings
                 </span>
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-1">
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div className="flex items-center gap-1 justify-center sm:justify-start">
                   <span
-                    className="text-2xl lg:text-3xl font-extrabold tracking-tight"
+                    className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight"
                     style={{ color: "var(--color-secondary)" }}
                   >
                     4.5
                   </span>
-                  <span className="text-amber-500 text-lg">★</span>
+                  <span className="text-amber-500 text-base sm:text-lg">★</span>
                 </div>
                 <span
-                  className="text-xs font-medium mt-1"
+                  className="text-[11px] sm:text-xs font-medium mt-0.5 sm:mt-1"
                   style={{ color: "var(--color-text-muted)" }}
                 >
                   Rating

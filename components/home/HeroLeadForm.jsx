@@ -137,7 +137,7 @@ export function HeroLeadForm() {
 
       {/* 2. FRONT GLASSMORPHIC CARD (0deg horizontal, Frosted Glass) */}
       <div
-        className="relative z-10 rounded-3xl p-6 sm:p-8 border transition-all duration-300 transform group-hover:-translate-y-1"
+        className="relative z-10 rounded-3xl p-4 sm:p-8 border transition-all duration-300 transform group-hover:-translate-y-1"
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.88)',
           backdropFilter: 'blur(16px)',
@@ -152,21 +152,21 @@ export function HeroLeadForm() {
         style={{ backgroundColor: 'var(--color-primary-light)' }}
       />
 
-      {/* Top Header Badge */}
-      <div className="relative flex items-center justify-between pb-3.5 mb-4 border-b border-slate-200/60">
+      {/* Top Header Badge (Hidden on mobile mode only) */}
+      <div className="relative hidden sm:flex items-center justify-between pb-3 sm:pb-3.5 mb-3 sm:mb-4 border-b border-slate-200/60">
         <div
-          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold shadow-2xs"
+          className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold shadow-2xs"
           style={{
             background: 'linear-gradient(135deg, rgba(60, 84, 86, 0.08), rgba(234, 137, 50, 0.12))',
             color: 'var(--color-secondary-dark)',
             border: '1px solid rgba(60, 84, 86, 0.12)',
           }}
         >
-          <Zap size={14} style={{ color: 'var(--color-primary)' }} />
-          <span>Instant CA Consultation & Strategy</span>
+          <Zap size={13} style={{ color: 'var(--color-primary)' }} />
+          <span>Instant CA Consultation</span>
         </div>
         <span
-          className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-bold"
+          className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold"
           style={{
             backgroundColor: 'rgba(240, 253, 244, 0.9)',
             color: '#15803D',
@@ -178,11 +178,11 @@ export function HeroLeadForm() {
         </span>
       </div>
 
-      <div className="relative mb-5">
-        <h3 className="text-xl font-bold leading-snug tracking-tight" style={{ color: 'var(--color-secondary-dark)' }}>
+      <div className="relative mb-4 sm:mb-5">
+        <h3 className="text-lg sm:text-xl font-bold leading-snug tracking-tight" style={{ color: 'var(--color-secondary-dark)' }}>
           Get expert CA advice within 15 minutes
         </h3>
-        <p className="text-xs mt-1 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+        <p className="text-[11px] sm:text-xs mt-0.5 sm:mt-1 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
           Connect directly with a Senior Partner. No outsourced sales agents.
         </p>
       </div>
@@ -470,11 +470,11 @@ export function HeroLeadForm() {
           </div>
 
           {/* Submit CTA */}
-          <div className="pt-2">
+          <div className="pt-1.5 sm:pt-2">
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full py-3.5 px-5 rounded-xl font-bold text-sm text-white flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:opacity-95 active:scale-98"
+              className="w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-xl font-bold text-xs sm:text-sm text-white flex items-center justify-center gap-2 shadow-lg transition-all duration-200 hover:opacity-95 active:scale-98"
               style={{
                 background: 'linear-gradient(135deg, var(--color-primary), #d97706)',
                 boxShadow: '0 10px 25px -5px rgba(234, 137, 50, 0.4)',
@@ -485,15 +485,15 @@ export function HeroLeadForm() {
               ) : (
                 <>
                   <span>Request Free 30-Min Strategy Call</span>
-                  <ArrowRight size={16} />
+                  <ArrowRight size={15} />
                 </>
               )}
             </button>
           </div>
 
           {/* Privacy Trust Note */}
-          <div className="pt-1 flex items-center justify-center gap-1.5 text-[11px] text-center font-medium" style={{ color: 'var(--color-text-muted)' }}>
-            <ShieldCheck size={14} className="text-emerald-600" />
+          <div className="pt-0.5 sm:pt-1 flex items-center justify-center gap-1.5 text-[10px] sm:text-[11px] text-center font-medium" style={{ color: 'var(--color-text-muted)' }}>
+            <ShieldCheck size={13} className="text-emerald-600" />
             <span>100% Confidential • Direct CA Callback • No Spam</span>
           </div>
         </form>

@@ -238,44 +238,52 @@ export function ProblemFinder() {
       className="py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto"
     >
       {/* SECTION HEADER */}
-      <div className="text-center max-w-3xl mx-auto mb-9 sm:mb-11">
+      <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-11">
         <h2
           id="diagnostic-heading"
-          className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-tight mb-4"
+          className="text-2xl sm:text-3xl lg:text-[42px] font-extrabold tracking-tight leading-snug sm:leading-tight mb-2.5 sm:mb-4"
           style={{ color: "var(--color-secondary-dark)" }}
         >
           What Business or Tax Challenge Are You Facing Today?
         </h2>
 
         <p
-          className="text-base sm:text-lg leading-relaxed font-normal"
+          className="text-xs sm:text-base lg:text-lg leading-relaxed font-normal"
           style={{ color: "var(--color-text-secondary)" }}
         >
           Select your situation below to see the exact legal recourse, required
           documentation, and guaranteed CA resolution timeline.
         </p>
 
-        {/* Trust Chips */}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-500">
-          <span className="flex items-center gap-1.5">
-            <CheckCircle2 size={15} className="text-emerald-600" />
-            Direct Senior Partner Handling
-          </span>
-          <span className="text-slate-300">•</span>
-          <span className="flex items-center gap-1.5">
-            <ShieldCheck size={15} className="text-emerald-600" />
-            Strict Attorney-Client Confidentiality
-          </span>
-          <span className="text-slate-300">•</span>
-          <span className="flex items-center gap-1.5">
-            <Building2 size={15} className="text-emerald-600" />
-            ICAI Compliant Execution
-          </span>
+        {/* Trust Chips (Same row on mobile, non-scrollable) */}
+        <div className="mt-3.5 sm:mt-5 grid grid-cols-3 sm:flex sm:flex-wrap items-center justify-center gap-1.5 sm:gap-4 text-slate-600 max-w-sm sm:max-w-none mx-auto">
+          <div className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 py-1.5 sm:px-0 sm:py-0 rounded-full sm:rounded-none bg-white sm:bg-transparent border sm:border-0 border-slate-200/80 sm:shadow-none shadow-2xs">
+            <CheckCircle2 size={12} className="text-emerald-600 shrink-0 sm:w-[15px] sm:h-[15px]" />
+            <span className="font-semibold sm:font-medium text-slate-800 sm:text-slate-500 text-[10px] sm:text-xs whitespace-nowrap">
+              <span className="sm:hidden">Direct CA Partner</span>
+              <span className="hidden sm:inline">Direct CA Partner Handling</span>
+            </span>
+          </div>
+          <span className="hidden sm:inline text-slate-300">•</span>
+          <div className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 py-1.5 sm:px-0 sm:py-0 rounded-full sm:rounded-none bg-white sm:bg-transparent border sm:border-0 border-slate-200/80 sm:shadow-none shadow-2xs">
+            <ShieldCheck size={12} className="text-emerald-600 shrink-0 sm:w-[15px] sm:h-[15px]" />
+            <span className="font-semibold sm:font-medium text-slate-800 sm:text-slate-500 text-[10px] sm:text-xs whitespace-nowrap">
+              <span className="sm:hidden">Confidential</span>
+              <span className="hidden sm:inline">Strict Confidentiality</span>
+            </span>
+          </div>
+          <span className="hidden sm:inline text-slate-300">•</span>
+          <div className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-1.5 py-1.5 sm:px-0 sm:py-0 rounded-full sm:rounded-none bg-white sm:bg-transparent border sm:border-0 border-slate-200/80 sm:shadow-none shadow-2xs">
+            <Building2 size={12} className="text-emerald-600 shrink-0 sm:w-[15px] sm:h-[15px]" />
+            <span className="font-semibold sm:font-medium text-slate-800 sm:text-slate-500 text-[10px] sm:text-xs whitespace-nowrap">
+              ICAI Compliant
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* DIAGNOSTIC CARDS GRID (3 Columns on Desktop with Tilted Card + Frosted Glass Overlay) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8 pt-2 pb-6">
+      {/* DIAGNOSTIC CARDS (Full-bleed swipe carousel on mobile, 3 Columns on Desktop) */}
+      <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 pt-2 pb-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none -mx-4 px-6 sm:-mx-6 sm:px-8 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-8">
         {PROBLEM_SCENARIOS.map((item) => {
           const Icon = item.icon;
 
@@ -284,10 +292,10 @@ export function ProblemFinder() {
               key={item.id}
               type="button"
               onClick={() => setActiveModalScenario(item)}
-              className="relative group text-left cursor-pointer focus:outline-none w-full select-none"
+              className="relative group text-left cursor-pointer focus:outline-none w-[82vw] max-w-[310px] shrink-0 snap-start md:w-full md:max-w-none select-none my-1"
               aria-haspopup="dialog"
             >
-              {/* 1. BACK TILTED CARD (Uniform -2.5deg tilt, domain-specific statutory tone) */}
+              {/* 1. BACK TILTED CARD (Matching desktop tilt) */}
               <div
                 className="absolute inset-0 rounded-2xl transition-all duration-300 transform -rotate-[2.5deg] group-hover:-rotate-[1deg] group-hover:scale-[1.01] pointer-events-none"
                 style={{
@@ -304,7 +312,7 @@ export function ProblemFinder() {
 
               {/* 2. FRONT GLASSMORPHIC CARD (0deg horizontal, same size, Frosted Glass) */}
               <div
-                className="relative z-10 flex flex-col justify-between p-6 rounded-2xl transition-all duration-300 transform group-hover:-translate-y-1.5 group-hover:shadow-2xl"
+                className="relative z-10 flex flex-col justify-between p-4.5 sm:p-6 rounded-2xl transition-all duration-300 transform group-hover:-translate-y-1.5 group-hover:shadow-2xl"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.88)",
                   backdropFilter: "blur(12px)",
@@ -316,9 +324,9 @@ export function ProblemFinder() {
               >
                 <div>
                   {/* Top Badge & Icon */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
                     <span
-                      className="flex h-11 w-11 items-center justify-center rounded-xl border transition-transform group-hover:scale-105"
+                      className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-xl border transition-transform group-hover:scale-105"
                       style={{
                         backgroundColor: item.iconBg,
                         color: item.iconColor,
@@ -326,10 +334,10 @@ export function ProblemFinder() {
                         boxShadow: `0 2px 8px -2px ${item.iconColor}25`,
                       }}
                     >
-                      <Icon size={22} />
+                      <Icon size={18} className="sm:w-[22px] sm:h-[22px]" />
                     </span>
                     <span
-                      className="rounded-full px-2.5 py-0.5 text-[11px] font-bold tracking-wide uppercase shadow-2xs border"
+                      className="rounded-full px-2 py-0.5 sm:px-2.5 text-[10px] sm:text-[11px] font-bold tracking-wide uppercase shadow-2xs border"
                       style={{
                         backgroundColor: "rgba(255, 255, 255, 0.95)",
                         borderColor: `${item.iconColor}30`,
@@ -341,7 +349,7 @@ export function ProblemFinder() {
                   </div>
 
                   <h3
-                    className="text-lg font-bold leading-snug mb-2 group-hover:text-[#EA8932] transition-colors"
+                    className="text-base sm:text-lg font-bold leading-snug mb-1.5 sm:mb-2 group-hover:text-[#EA8932] transition-colors"
                     style={{
                       color: "var(--color-secondary)",
                     }}
@@ -349,27 +357,27 @@ export function ProblemFinder() {
                     {item.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm mb-4 line-clamp-2 leading-relaxed text-slate-600">
+                  <p className="text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 leading-relaxed text-slate-600">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Bottom Timeline & Diagnose action */}
                 <div
-                  className="pt-3.5 border-t flex items-center justify-between text-xs"
+                  className="pt-3 sm:pt-3.5 border-t flex items-center justify-between text-[11px] sm:text-xs"
                   style={{ borderColor: "rgba(226, 232, 240, 0.8)" }}
                 >
-                  <span className="flex items-center gap-1.5 text-slate-500 font-medium text-xs">
-                    <Clock size={14} style={{ color: item.iconColor }} />
+                  <span className="flex items-center gap-1.5 text-slate-500 font-medium text-[11px] sm:text-xs">
+                    <Clock size={13} style={{ color: item.iconColor }} />
                     {item.timelineSummary}
                   </span>
                   <span
-                    className="flex items-center gap-1 text-xs font-bold transition-all group-hover:translate-x-1"
+                    className="flex items-center gap-1 text-[11px] sm:text-xs font-bold transition-all group-hover:translate-x-1"
                     style={{
                       color: "var(--color-primary)",
                     }}
                   >
-                    Diagnose <ChevronRight size={14} />
+                    Diagnose <ChevronRight size={13} />
                   </span>
                 </div>
               </div>
@@ -385,7 +393,7 @@ export function ProblemFinder() {
 
         {/* Main Frosted Glass Surface */}
         <div
-          className="relative rounded-3xl p-6 sm:p-7 flex flex-col lg:flex-row items-center justify-between gap-6 transition-all duration-300"
+          className="relative rounded-2xl sm:rounded-3xl p-4.5 sm:p-7 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 transition-all duration-300"
           style={{
             backgroundColor: "rgba(255, 255, 255, 0.86)",
             backdropFilter: "blur(20px)",
@@ -396,9 +404,9 @@ export function ProblemFinder() {
           }}
         >
           {/* Left Feature: 99.4% Glass Badge & Dispute Authority */}
-          <div className="flex items-center gap-4 sm:gap-5 w-full lg:w-auto">
+          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3.5 sm:gap-5 w-full lg:w-auto text-center sm:text-left">
             <div
-              className="flex flex-col items-center justify-center h-14 w-20 sm:h-16 sm:w-24 rounded-2xl shrink-0 border transition-transform group-hover:scale-105"
+              className="flex flex-row sm:flex-col items-center justify-center py-1.5 px-3.5 sm:py-0 sm:px-0 sm:h-16 sm:w-24 rounded-full sm:rounded-2xl shrink-0 border transition-transform group-hover:scale-105 gap-1.5 sm:gap-0"
               style={{
                 background:
                   "linear-gradient(135deg, rgba(234, 137, 50, 0.15), rgba(234, 137, 50, 0.05))",
@@ -407,17 +415,17 @@ export function ProblemFinder() {
                   "0 4px 12px -2px rgba(234, 137, 50, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.8)",
               }}
             >
-              <div className="flex items-center gap-1 text-base sm:text-lg font-extrabold tracking-tight text-[#c2410c]">
-                <ShieldCheck size={16} className="text-[#EA8932] shrink-0" />
+              <div className="flex items-center gap-1 text-[14px] sm:text-lg font-extrabold tracking-tight text-[#c2410c]">
+                <ShieldCheck size={14} className="text-[#EA8932] shrink-0 sm:w-4 sm:h-4" />
                 <span>99.4%</span>
               </div>
-              <span className="text-[9px] font-bold uppercase tracking-wider text-amber-800/80 mt-0.5">
+              <span className="text-[10px] sm:text-[9px] font-bold uppercase tracking-wider text-amber-800/80 sm:mt-0.5">
                 Resolved
               </span>
             </div>
 
-            <div>
-              <div className="flex items-center gap-2 mb-1">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-1">
                 <h4 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
                   Dispute &amp; Statutory Tax Matter Success Rate
                 </h4>
@@ -426,7 +434,7 @@ export function ProblemFinder() {
                   Pan-India
                 </span>
               </div>
-              <p className="text-xs text-slate-500 leading-relaxed max-w-xl">
+              <p className="text-[11.5px] sm:text-xs text-slate-500 leading-relaxed max-w-xl mx-auto sm:mx-0">
                 Over{" "}
                 <strong className="font-semibold text-slate-800">
                   ₹50+ Crores recovered &amp; saved
@@ -438,31 +446,31 @@ export function ProblemFinder() {
           </div>
 
           {/* Right Metrics Cluster: Dividers, Bold Stat Figures & Live Status */}
-          <div className="flex items-center gap-4 sm:gap-6 divide-x divide-slate-200/80 text-xs w-full lg:w-auto justify-between lg:justify-end pt-4 lg:pt-0 border-t lg:border-t-0 border-slate-200/60">
-            <div className="text-center lg:text-left pr-4 sm:pr-6">
-              <div className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">
+          <div className="grid grid-cols-3 divide-x divide-slate-200/80 text-xs w-full lg:w-auto lg:flex lg:items-center lg:gap-6 lg:divide-x lg:justify-end pt-3 sm:pt-4 lg:pt-0 border-t lg:border-t-0 border-slate-200/60">
+            <div className="text-center lg:text-left px-1 sm:px-2 lg:px-0 lg:pr-6">
+              <div className="text-sm sm:text-xl font-extrabold text-slate-900 tracking-tight">
                 ₹50 Cr+
               </div>
-              <div className="text-[11px] font-medium text-slate-500 mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5 leading-tight">
                 Recovered / Saved
               </div>
             </div>
 
-            <div className="text-center lg:text-left px-4 sm:px-6">
-              <div className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">
+            <div className="text-center lg:text-left px-1 sm:px-2 lg:px-6">
+              <div className="text-sm sm:text-xl font-extrabold text-slate-900 tracking-tight">
                 10,000+
               </div>
-              <div className="text-[11px] font-medium text-slate-500 mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5 leading-tight">
                 Compliances Handled
               </div>
             </div>
 
-            <div className="text-center lg:text-left pl-4 sm:pl-6">
-              <div className="text-lg sm:text-xl font-extrabold text-emerald-600 tracking-tight flex items-center gap-1.5 justify-center lg:justify-start">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
+            <div className="text-center lg:text-left px-1 sm:px-2 lg:px-0 lg:pl-6">
+              <div className="text-sm sm:text-xl font-extrabold text-emerald-600 tracking-tight flex items-center gap-1 sm:gap-1.5 justify-center lg:justify-start">
+                <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 animate-ping" />
                 15 Min
               </div>
-              <div className="text-[11px] font-medium text-slate-500 mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-medium text-slate-500 mt-0.5 leading-tight">
                 Avg Response Time
               </div>
             </div>
@@ -485,7 +493,7 @@ export function ProblemFinder() {
 
             {/* Modal Box */}
             <div
-              className="relative w-full max-h-[96vh] overflow-y-auto sm:overflow-hidden rounded-3xl bg-white shadow-2xl border border-slate-200/80 transition-transform"
+              className="relative w-full max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl border border-slate-200/80 transition-transform"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header with Teal Gradient & Corner Light */}

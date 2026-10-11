@@ -34,7 +34,7 @@ export function AboutSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
         {/* LEFT COLUMN: Large, Relatable Image Matching Content Height */}
         <div className="lg:col-span-6 flex flex-col">
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl shadow-slate-900/10 bg-slate-100 w-full h-full min-h-[340px] sm:min-h-[400px]">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl shadow-slate-900/10 bg-slate-100 w-full h-[260px] sm:h-[340px] lg:h-full min-h-[260px] sm:min-h-[340px] lg:min-h-[400px]">
             <Image
               src="/images/about/about section.webp"
               alt="1Tax India Chartered Accountant consultation with clients"
@@ -50,13 +50,13 @@ export function AboutSection() {
         <div className="lg:col-span-6 flex flex-col justify-center py-1">
           <h2
             id="about-heading"
-            className="text-2xl sm:text-3xl lg:text-[38px] font-extrabold text-[#0A2540] tracking-tight leading-tight sm:leading-[1.2] mb-4"
+            className="text-xl sm:text-3xl lg:text-[38px] font-extrabold text-[#0A2540] tracking-tight leading-snug sm:leading-[1.2] mb-3 sm:mb-4"
           >
             Direct Senior CA Oversight for{" "}
             <span className="text-[#EA8932]">Modern Growing Businesses</span>
           </h2>
 
-          <div className="space-y-3.5 text-sm sm:text-base text-slate-600 leading-relaxed font-normal mb-6">
+          <div className="space-y-2.5 sm:space-y-3.5 text-xs sm:text-base text-slate-600 leading-relaxed font-normal mb-5 sm:mb-6">
             <p>
               Headquartered in Patel Nagar, Ghaziabad,{" "}
               <strong>1Tax India</strong> is an ICAI-regulated Chartered
@@ -72,47 +72,69 @@ export function AboutSection() {
             </p>
           </div>
 
-          {/* Clean Trust Highlights */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7">
-            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+          {/* Clean Trust Highlights + Buttons (2x2 Grid on Mobile, 3-Columns + Row on Desktop) */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-5 sm:mb-7 items-stretch">
+            {/* Cell 1: ICAI Regulated */}
+            <div className="flex items-start gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200/80">
               <Award className="w-4 h-4 text-[#EA8932] mt-0.5 shrink-0" />
               <div>
-                <p className="text-xs font-bold text-[#0A2540]">
+                <p className="text-[11.5px] sm:text-xs font-bold text-[#0A2540]">
                   ICAI Regulated
                 </p>
-                <p className="text-[11px] text-slate-500">
+                <p className="text-[10px] sm:text-[11px] text-slate-500">
                   Statutory Fellow CAs
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+            {/* Cell 2: Zero Call Centers */}
+            <div className="flex items-start gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200/80">
               <UserCheck className="w-4 h-4 text-[#EA8932] mt-0.5 shrink-0" />
               <div>
-                <p className="text-xs font-bold text-[#0A2540]">
+                <p className="text-[11.5px] sm:text-xs font-bold text-[#0A2540]">
                   Zero Call Centers
                 </p>
-                <p className="text-[11px] text-slate-500">
+                <p className="text-[10px] sm:text-[11px] text-slate-500">
                   Direct partner access
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+            {/* Cell 3: Delhi NCR & Pan-India */}
+            <div className="flex items-start gap-2 sm:gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200/80">
               <MapPin className="w-4 h-4 text-[#EA8932] mt-0.5 shrink-0" />
               <div>
-                <p className="text-xs font-bold text-[#0A2540]">
-                  Delhi NCR & Pan-India
+                <p className="text-[11.5px] sm:text-xs font-bold text-[#0A2540]">
+                  Delhi NCR &amp; Pan-India
                 </p>
-                <p className="text-[11px] text-slate-500">
+                <p className="text-[10px] sm:text-[11px] text-slate-500">
                   100% Faceless delivery
                 </p>
               </div>
             </div>
+
+            {/* Cell 4 (Mobile Only): Both CTA Buttons in 2nd row 2nd cell */}
+            <div className="flex sm:hidden flex-col justify-center gap-1.5 p-1">
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 rounded-xl bg-[#EA8932] hover:bg-[#d67827] text-white text-[11px] font-bold shadow-xs transition-all active:scale-95 text-center"
+              >
+                <span>Explore More</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                href="https://wa.me/919999999999?text=Hello%201Tax,%20I%20would%20like%20to%20consult%20with%20a%20Chartered%20Accountant."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full py-1.5 px-2 rounded-xl border border-slate-300 hover:border-[#0A2540] text-[#0A2540] text-[10.5px] font-semibold transition-colors active:scale-95 text-center truncate"
+              >
+                <span>Consult Senior CA</span>
+              </Link>
+            </div>
           </div>
 
-          {/* Action Button & Contact Link */}
-          <div className="flex flex-wrap items-center gap-3">
+          {/* Action Button & Contact Link (Desktop / Tablet view: hidden on mobile) */}
+          <div className="hidden sm:flex flex-wrap items-center gap-3">
             <Link
               href="/about"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#EA8932] hover:bg-[#d67827] text-white text-xs sm:text-sm font-bold shadow-sm transition-all hover:shadow-md"

@@ -88,6 +88,8 @@ const SLIDES = [
   ],
 ];
 
+const ALL_PRACTICE_CARDS = SLIDES.flat();
+
 export function SpecializedSection() {
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -108,9 +110,12 @@ export function SpecializedSection() {
       className="relative pt-10 sm:pt-14 lg:pt-16 pb-0 overflow-hidden"
       style={{ backgroundColor: "#0c222e" }}
     >
-      {/* SVG ClipPath Definition (Curvature preserved exactly at 0.38 rise) */}
+      {/* SVG ClipPath Definitions (Gentle 0.12 curve for mobile, full 0.38 arc on desktop) */}
       <svg width="0" height="0" className="absolute">
         <defs>
+          <clipPath id="ctaContinuousArcMobile" clipPathUnits="objectBoundingBox">
+            <path d="M 0,0.12 Q 0.5,0 1,0.12 L 1,1 L 0,1 Z" />
+          </clipPath>
           <clipPath id="ctaContinuousArc" clipPathUnits="objectBoundingBox">
             <path d="M 0,0.38 Q 0.5,0 1,0.38 L 1,1 L 0,1 Z" />
           </clipPath>
@@ -155,27 +160,27 @@ export function SpecializedSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* SECTION HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
           <div
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-sm backdrop-blur-md"
+            className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4 border shadow-sm backdrop-blur-md"
             style={{
               backgroundColor: "rgba(234, 137, 50, 0.15)",
               borderColor: "rgba(234, 137, 50, 0.3)",
               color: "#FDBA74",
             }}
           >
-            <Sparkles size={14} className="text-amber-400" />
+            <Sparkles size={13} className="text-amber-400" />
             <span>Flagship Practice Areas</span>
           </div>
 
           <h2
             id="specialized-heading"
-            className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-tight mb-4 text-white"
+            className="text-2xl sm:text-3xl lg:text-[42px] font-extrabold tracking-tight leading-snug sm:leading-tight mb-3 sm:mb-4 text-white"
           >
             High-Stakes Legal &amp; Tax Practice Areas Where Precision Wins
           </h2>
 
-          <p className="text-base sm:text-lg leading-relaxed font-normal text-slate-300">
+          <p className="text-xs sm:text-base lg:text-lg leading-relaxed font-normal text-slate-300">
             When standard compliance isn&apos;t enough - our senior CA partners
             lead aggressive defense, statutory recoveries, and high-value tax
             litigation across India.
@@ -209,18 +214,63 @@ export function SpecializedSection() {
             </button>
           </div>
 
-          {/* Cards Wrapper with Isolated Stacking Context */}
-          <div className="flex flex-col md:flex-row items-center md:items-end justify-center relative z-10 [isolation:isolate]">
+          {/* MOBILE VIEW (< md): True Native Horizontal Swipe Carousel with full-bleed touch momentum and snap */}
+          <div className="flex md:hidden gap-4 pt-2 pb-8 overflow-x-auto snap-x snap-mandatory scrollbar-none -mx-4 px-6 sm:-mx-6 sm:px-8 scroll-pl-6 sm:scroll-pl-8 relative z-10 [isolation:isolate]">
+            {ALL_PRACTICE_CARDS.map((card, idx) => {
+              // Alternating subtle playful tilt for the native scrollable cards
+              const tiltClass =
+                idx % 3 === 0
+                  ? "-rotate-2"
+                  : idx % 3 === 1
+                  ? "rotate-1.5"
+                  : "-rotate-1";
+
+              return (
+                <div
+                  key={`mobile-${card.id}`}
+                  className={`w-[82vw] max-w-[310px] shrink-0 snap-start bg-white rounded-2xl border border-blue-100/90 p-5 shadow-2xl transition-all duration-300 flex flex-col justify-start h-[320px] select-none my-1 transform-gpu ${tiltClass}`}
+                  style={{
+                    boxShadow:
+                      "0 20px 45px -10px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.85)",
+                  }}
+                >
+                  {/* Title with Right Triangle Arrow ▸ */}
+                  <Link href={card.href} className="group/link block">
+                    <h3 className="text-base font-extrabold text-[#0A2540] tracking-tight leading-snug mb-1.5 flex items-center justify-between group-hover/link:text-[#EA8932] transition-colors">
+                      <span>{card.title}</span>
+                      <span className="text-[#0A2540] group-hover/link:text-[#EA8932] transition-transform group-hover/link:translate-x-1 text-sm">
+                        ▸
+                      </span>
+                    </h3>
+                  </Link>
+
+                  {/* Concise 2-line description */}
+                  <p className="text-[12.5px] text-[#4A5568] leading-relaxed font-normal mb-2 line-clamp-2">
+                    {card.description}
+                  </p>
+
+                  {/* 3D ISOMETRIC ILLUSTRATIVE GRAPHIC */}
+                  <div className="flex-1 w-full flex items-center justify-center overflow-hidden pt-1 relative transform-gpu">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      width={360}
+                      height={230}
+                      className="w-full h-auto max-h-[160px] object-contain select-none pointer-events-none transform-gpu"
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* DESKTOP VIEW (md+): Fanned 3-card bottom-pivoted slide deck (100% UNTOUCHED) */}
+          <div className="hidden md:flex md:flex-row items-end justify-center relative z-10 [isolation:isolate] pt-4 md:pt-0">
             {currentCards.map((card, idx) => {
               const isLeft = idx === 0;
               const isCenter = idx === 1;
               const isRight = idx === 2;
 
-              // Exact Positioning & Overlap Geometry:
-              // Natural Fan Architecture (pivoted from bottom center):
-              // Left Card: tilted -3.5deg, top sweeps outward to left, mild inward translate at bottom
-              // Center Card: straight 0deg, highest z-index (z-10), elevated
-              // Right Card: tilted +3.5deg, top sweeps outward to right, mild inward translate at bottom
               let desktopPositionClasses = "";
               if (isLeft) {
                 desktopPositionClasses =
@@ -230,13 +280,13 @@ export function SpecializedSection() {
                   "md:rotate-0 md:translate-y-1 lg:translate-y-2 hover:md:-translate-y-1 hover:lg:-translate-y-1 z-10 hover:z-10 origin-bottom";
               } else if (isRight) {
                 desktopPositionClasses =
-                  "md:rotate-3 md:translate-y-5 lg:translate-y-6 hover:md:translate-y-4 hover:lg:translate-y-5 md:-translate-x-[22px] lg:-translate-x-[26px] z-0 hover:z-0 origin-bottom";
+                  "md:rotate-3 md:translate-y-5 lg:translate-y-6 hover:md:translate-y-4 hover:lg:translate-y-5 md:-translate-x-[22px] lg:-translate-x-[26px] z-0 hover:md:z-0 origin-bottom";
               }
 
               return (
                 <div
                   key={card.id}
-                  className={`group w-full max-w-[365px] sm:max-w-[380px] md:w-[340px] lg:w-[370px] shrink-0 bg-white rounded-t-[28px] rounded-b-xl border border-blue-100/80 px-6 sm:px-7 pt-6 sm:pt-7 pb-4 sm:pb-5 shadow-2xl transition-all duration-500 ease-out flex flex-col justify-start h-[420px] sm:h-[435px] md:h-[450px] my-3 md:my-0 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)] antialiased ${desktopPositionClasses}`}
+                  className={`group md:w-[340px] lg:w-[370px] shrink-0 bg-white rounded-t-[24px] sm:rounded-t-[28px] rounded-b-xl border border-blue-100/80 px-5 sm:px-7 pt-5 sm:pt-7 pb-3.5 sm:pb-5 shadow-2xl transition-all duration-500 ease-out flex flex-col justify-start md:h-[450px] transform-gpu [backface-visibility:hidden] [transform:translateZ(0)] antialiased ${desktopPositionClasses}`}
                   style={{
                     boxShadow: isCenter
                       ? "0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.9), 0 0 20px rgba(56, 189, 248, 0.15)"
@@ -245,9 +295,9 @@ export function SpecializedSection() {
                 >
                   {/* Title with Right Triangle Arrow ▸ */}
                   <Link href={card.href} className="group/link block">
-                    <h3 className="text-xl sm:text-[22px] font-extrabold text-[#0A2540] tracking-tight leading-snug mb-2 flex items-center justify-between group-hover/link:text-[#EA8932] transition-colors">
+                    <h3 className="text-lg sm:text-[22px] font-extrabold text-[#0A2540] tracking-tight leading-snug mb-1.5 sm:mb-2 flex items-center justify-between group-hover/link:text-[#EA8932] transition-colors">
                       <span>{card.title}</span>
-                      <span className="text-[#0A2540] group-hover/link:text-[#EA8932] transition-transform group-hover/link:translate-x-1 text-base sm:text-lg">
+                      <span className="text-[#0A2540] group-hover/link:text-[#EA8932] transition-transform group-hover/link:translate-x-1 text-sm sm:text-lg">
                         ▸
                       </span>
                     </h3>
@@ -265,44 +315,22 @@ export function SpecializedSection() {
                       alt={card.title}
                       width={360}
                       height={230}
-                      className="w-full h-auto max-h-[235px] sm:max-h-[255px] md:max-h-[275px] object-contain select-none pointer-events-none transform-gpu [backface-visibility:hidden] [transform:translateZ(0)]"
+                      className="w-full h-auto md:max-h-[275px] object-contain select-none pointer-events-none transform-gpu [backface-visibility:hidden] [transform:translateZ(0)]"
                     />
                   </div>
                 </div>
               );
             })}
           </div>
-
-          {/* Mobile Buttons Fallback */}
-          <div className="flex lg:hidden items-center justify-center gap-4 mt-6">
-            <button
-              type="button"
-              onClick={prevSlide}
-              aria-label="Previous 3 practices"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1e293b] text-white shadow-lg border border-slate-700"
-            >
-              <ArrowLeft size={16} />
-            </button>
-            <button
-              type="button"
-              onClick={nextSlide}
-              aria-label="Next 3 practices"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1e293b] text-white shadow-lg border border-slate-700 hover:bg-[#334155] transition-all"
-            >
-              <ArrowRight size={16} />
-            </button>
-          </div>
         </div>
       </div>
 
       {/* FULL-WIDTH PRONOUNCED CIRCULAR DOME CTA BANNER (SAFFRON AMBER #EA8932) */}
       <div
-        className="relative z-20 -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-28 w-full text-white pb-8 sm:pb-10 pt-16 sm:pt-20 md:pt-24 px-4 sm:px-6 lg:px-8 shadow-2xl"
+        className="relative z-20 -mt-10 sm:-mt-14 md:-mt-24 lg:-mt-28 w-full text-white pb-8 sm:pb-10 pt-12 sm:pt-16 md:pt-24 px-4 sm:px-6 lg:px-8 shadow-2xl [clip-path:url(#ctaContinuousArcMobile)] md:[clip-path:url(#ctaContinuousArc)]"
         style={{
           background:
             "linear-gradient(135deg, #EA8932 0%, #E27B22 45%, #C25E0A 100%)",
-          clipPath: "url(#ctaContinuousArc)",
-          WebkitClipPath: "url(#ctaContinuousArc)",
         }}
       >
         {/* Subtle Ambient Shimmer */}
@@ -311,8 +339,8 @@ export function SpecializedSection() {
           style={{ backgroundColor: "#FEF08A" }}
         />
 
-        {/* NAVIGATION INDICATOR DIRECTLY ON DOME (Positioned Up, No Badge) */}
-        <div className="flex justify-center -mt-8 sm:-mt-10 md:-mt-12 mb-6 sm:mb-7 relative z-30">
+        {/* NAVIGATION INDICATOR DIRECTLY ON DOME (Hidden on mobile, preserved on desktop) */}
+        <div className="hidden md:flex justify-center -mt-12 mb-7 relative z-30">
           <div className="inline-flex items-center gap-2.5">
             {SLIDES.map((_, idx) => (
               <button
@@ -336,15 +364,15 @@ export function SpecializedSection() {
           </div>
         </div>
 
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center text-white">
+        <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 items-center text-white">
           {/* COLUMN 1: Firm Commitment & Human Connection (Left - 4 cols) */}
-          <div className="md:col-span-4 lg:col-span-4 flex flex-col justify-center text-center md:text-left space-y-2.5 max-w-md mx-auto md:mx-0">
-            <p className="text-[15px] sm:text-base lg:text-[17px] font-semibold text-white leading-relaxed tracking-tight drop-shadow-xs">
+          <div className="md:col-span-4 lg:col-span-4 flex flex-col justify-center text-center md:text-left space-y-1.5 sm:space-y-2 max-w-md mx-auto md:mx-0 px-2 sm:px-0">
+            <p className="text-xs sm:text-base lg:text-[17px] font-semibold text-white leading-relaxed tracking-tight drop-shadow-xs">
               &ldquo;Behind every business is years of hard work. We stand
               between you and tax stress &mdash; real Senior CAs who answer your
               call and treat your company like their own.&rdquo;
             </p>
-            <p className="text-xs sm:text-[13px] text-amber-100 font-medium tracking-tight">
+            <p className="text-[11px] sm:text-[13px] text-amber-100 font-medium tracking-tight">
               <span>The 1Tax Promise &bull; </span>
               <a
                 href="#consultation-form"
@@ -356,14 +384,14 @@ export function SpecializedSection() {
           </div>
 
           {/* COLUMN 2: Laurel Award Trust Seal (Center - 4 cols, directly on background without box) */}
-          <div className="md:col-span-4 lg:col-span-4 flex items-center justify-center py-2 md:py-0">
+          <div className="md:col-span-4 lg:col-span-4 flex items-center justify-center py-1 sm:py-2 md:py-0">
             <div className="relative group transition-transform hover:scale-105 duration-300">
               <Image
                 src="/images/ca-laurel-badge-transparent.png"
                 alt="India's Most Trusted CA & Tax Advisory Firm 2026 - 4.5 Rating"
                 width={220}
                 height={200}
-                className="w-44 sm:w-48 lg:w-52 h-auto drop-shadow-sm select-none pointer-events-none"
+                className="w-36 sm:w-48 lg:w-52 h-auto drop-shadow-sm select-none pointer-events-none"
                 priority
               />
             </div>

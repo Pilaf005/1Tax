@@ -74,7 +74,7 @@ export function FinalCTA() {
     <section
       id="contact"
       aria-labelledby="final-cta-heading"
-      className="relative bg-[#0C222E] text-white py-14 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-20"
+      className="relative bg-[#0C222E] text-white py-10 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-20"
     >
       {/* Ambient background glows */}
       <div
@@ -86,33 +86,33 @@ export function FinalCTA() {
         style={{ backgroundColor: "#14b8a6" }}
       />
 
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
         {/* ─────────────────────────────────────────────────────────────
             LEFT COLUMN: Direct Advisory Value Prop & Quick Channels
         ───────────────────────────────────────────────────────────── */}
-        <div className="lg:col-span-7 flex flex-col justify-center">
+        <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
           <h2
             id="final-cta-heading"
-            className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-white leading-tight mb-4"
+            className="text-2xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-white leading-snug sm:leading-tight mb-2.5 sm:mb-4"
           >
             Speak Directly with a Senior{" "}
             <span className="text-[#EA8932]">Chartered Accountant</span> Today
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mb-8 max-w-2xl">
+          <p className="text-xs sm:text-base lg:text-lg text-slate-300 leading-relaxed font-normal mb-5 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
             Zero junior telecallers or automated bots. Direct Fellow CA consultation —
             transparent fees told upfront before you proceed.
           </p>
 
           {/* Quick Contact Buttons */}
-          <div className="flex flex-wrap items-center gap-3.5 mb-7">
+          <div className="flex flex-row items-center justify-center lg:justify-start gap-2.5 sm:gap-3.5 mb-4 sm:mb-7">
             {/* Phone Call Pill */}
             <a
               href={`tel:${PHONE_NUMBER}`}
-              className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-[#0C222E] text-sm sm:text-base font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white hover:bg-slate-100 text-[#0C222E] text-xs sm:text-base font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex-1 sm:flex-initial"
             >
-              <Phone className="w-4 h-4 text-[#0C222E]" />
-              <span>{formattedPhone}</span>
+              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0C222E] shrink-0" />
+              <span className="truncate">{formattedPhone}</span>
             </a>
 
             {/* WhatsApp Pill */}
@@ -120,18 +120,18 @@ export function FinalCTA() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm sm:text-base font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-base font-bold shadow-md hover:shadow-lg transition-all active:scale-[0.98] flex-1 sm:flex-initial"
             >
-              <MessageSquare className="w-4 h-4 fill-white" />
+              <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white shrink-0" />
               <span>WhatsApp</span>
             </a>
           </div>
 
           {/* Operating Hours & Trust Micro-Copy */}
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 font-normal">
-            <Clock className="w-4 h-4 text-slate-400 shrink-0" />
+          <div className="flex items-center justify-center lg:justify-start gap-1.5 sm:gap-2 text-[11px] sm:text-sm text-slate-400 font-normal">
+            <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400 shrink-0" />
             <span>
-              Mon–Sat 9:30 AM – 7:00 PM IST &bull; Partner response SLA under 15 minutes.
+              Mon–Sat 9:30 AM – 7:00 PM IST &bull; SLA under 15 minutes.
             </span>
           </div>
         </div>
@@ -140,7 +140,7 @@ export function FinalCTA() {
             RIGHT COLUMN: Clean Elevated Callback Card
         ───────────────────────────────────────────────────────────── */}
         <div className="lg:col-span-5">
-          <div className="relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 text-slate-900">
+          <div className="relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl border border-slate-100 text-slate-900">
             {status === "success" ? (
               /* Success State */
               <div className="text-center py-6">
@@ -173,12 +173,12 @@ export function FinalCTA() {
               </div>
             ) : (
               /* Callback Form */
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-2">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0C222E] tracking-tight">
+                  <h3 className="text-lg sm:text-2xl font-extrabold text-[#0C222E] tracking-tight">
                     Request a callback
                   </h3>
-                  <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-orange-50 text-[#C25E0A] border border-orange-200/80">
+                  <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 sm:px-2.5 rounded-full bg-orange-50 text-[#C25E0A] border border-orange-200/80">
                     &lt; 15-Min SLA
                   </span>
                 </div>
@@ -193,7 +193,7 @@ export function FinalCTA() {
                 <div>
                   <label
                     htmlFor="cta-name"
-                    className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5"
+                    className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase tracking-wider mb-1"
                   >
                     Your name
                   </label>
@@ -205,7 +205,7 @@ export function FinalCTA() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Full name"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#EA8932] focus:border-transparent transition-all"
+                    className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#EA8932] focus:border-transparent transition-all"
                   />
                 </div>
 
@@ -213,12 +213,12 @@ export function FinalCTA() {
                 <div>
                   <label
                     htmlFor="cta-mobile"
-                    className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5"
+                    className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase tracking-wider mb-1"
                   >
                     Mobile number
                   </label>
                   <div className="flex rounded-xl border border-slate-200 overflow-hidden focus-within:ring-2 focus-within:ring-[#EA8932] focus-within:border-transparent transition-all">
-                    <span className="inline-flex items-center px-3 bg-slate-50 border-r border-slate-200 text-slate-600 font-semibold text-sm">
+                    <span className="inline-flex items-center px-2.5 sm:px-3 bg-slate-50 border-r border-slate-200 text-slate-600 font-semibold text-xs sm:text-sm">
                       +91
                     </span>
                     <input
@@ -229,7 +229,7 @@ export function FinalCTA() {
                       value={formData.mobile}
                       onChange={handleChange}
                       placeholder="10-digit mobile"
-                      className="w-full px-3.5 py-2.5 bg-white text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none"
+                      className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 bg-white text-slate-900 placeholder:text-slate-400 text-xs sm:text-sm focus:outline-none"
                     />
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export function FinalCTA() {
                 <div>
                   <label
                     htmlFor="cta-city"
-                    className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5"
+                    className="block text-[11px] sm:text-xs font-bold text-slate-700 uppercase tracking-wider mb-1"
                   >
                     City / Pincode / State
                   </label>
@@ -250,7 +250,7 @@ export function FinalCTA() {
                     value={formData.city}
                     onChange={handleChange}
                     placeholder="e.g. Ghaziabad, Delhi NCR"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#EA8932] focus:border-transparent transition-all"
+                    className="w-full px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#EA8932] focus:border-transparent transition-all"
                   />
                 </div>
 
@@ -258,7 +258,7 @@ export function FinalCTA() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full mt-2 py-3.5 px-6 rounded-xl bg-[#EA8932] hover:bg-[#d67827] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all disabled:opacity-70 active:scale-[0.99] cursor-pointer"
+                  className="w-full mt-1.5 sm:mt-2 py-3 sm:py-3.5 px-5 sm:px-6 rounded-xl bg-[#EA8932] hover:bg-[#d67827] text-white font-bold text-xs sm:text-base flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all disabled:opacity-70 active:scale-[0.99] cursor-pointer"
                 >
                   {status === "submitting" ? (
                     <>
@@ -274,10 +274,12 @@ export function FinalCTA() {
                 </button>
 
                 {/* Trust & Privacy Notice */}
-                <div className="pt-2 text-center">
-                  <p className="text-[11px] text-slate-500 font-medium inline-flex items-center gap-1.5">
+                <div className="pt-2 flex items-center justify-center">
+                  <p className="text-[10.5px] sm:text-[11px] text-slate-500 font-medium inline-flex items-center justify-center gap-1.5 text-center leading-normal">
                     <ShieldCheck className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    <span>No spam calls. Your details stay 100% private & ICAI compliant.</span>
+                    <span>
+                      No spam calls. <span className="hidden sm:inline">Your details stay </span>100% private &amp; ICAI compliant.
+                    </span>
                   </p>
                 </div>
               </form>

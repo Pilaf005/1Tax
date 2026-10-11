@@ -29,45 +29,45 @@ export function Footer() {
           1. TOP TRUST & CREDENTIALS RIBBON
       ───────────────────────────────────────────────────────────── */}
       <div className="border-b border-slate-800/80 bg-[#0A1D28]/60">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-orange-500/10 border border-orange-500/20 text-[#EA8932] flex items-center justify-center shrink-0">
-                <Award className="w-4 h-4" />
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-orange-500/10 border border-orange-500/20 text-[#EA8932] flex items-center justify-center shrink-0">
+                <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
-              <div>
-                <p className="text-xs font-bold text-white tracking-tight">ICAI Regulated Firm</p>
-                <p className="text-[11px] text-slate-400">Chartered Accountants Practice</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                <Zap className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-white tracking-tight">&lt; 15-Min Response SLA</p>
-                <p className="text-[11px] text-slate-400">Direct Senior Partner Callback</p>
+              <div className="min-w-0">
+                <p className="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight">ICAI Regulated Firm</p>
+                <p className="text-[10px] sm:text-[11px] text-slate-400 leading-tight truncate sm:whitespace-normal">CA Practice</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center shrink-0">
-                <CheckCircle2 className="w-4 h-4" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
-              <div>
-                <p className="text-xs font-bold text-white tracking-tight">Zero Junior Call Centers</p>
-                <p className="text-[11px] text-slate-400">100% CA Partner Handled</p>
+              <div className="min-w-0">
+                <p className="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight">&lt; 15-Min Response</p>
+                <p className="text-[10px] sm:text-[11px] text-slate-400 leading-tight truncate sm:whitespace-normal">Direct Senior Partner</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-4 h-4" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-teal-500/10 border border-teal-500/20 text-teal-400 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
-              <div>
-                <p className="text-xs font-bold text-white tracking-tight">Pan-India Delivery</p>
-                <p className="text-[11px] text-slate-400">100% Digital Faceless Practice</p>
+              <div className="min-w-0">
+                <p className="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight">Zero Call Centers</p>
+                <p className="text-[10px] sm:text-[11px] text-slate-400 leading-tight truncate sm:whitespace-normal">100% CA Handled</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight">Pan-India Delivery</p>
+                <p className="text-[10px] sm:text-[11px] text-slate-400 leading-tight truncate sm:whitespace-normal">100% Digital Practice</p>
               </div>
             </div>
           </div>
@@ -77,10 +77,10 @@ export function Footer() {
       {/* ─────────────────────────────────────────────────────────────
           2. MAIN 5-COLUMN NAVIGATION GRID
       ───────────────────────────────────────────────────────────── */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-x-6 gap-y-9 lg:gap-8">
           {/* COLUMN 1: Brand & Contact Identity (4 cols) */}
-          <div className="lg:col-span-4 space-y-5">
+          <div className="col-span-2 md:col-span-4 lg:col-span-4 space-y-4 sm:space-y-5">
             <Link href="/" className="inline-block">
               <Image
                 src="/logo.png"
@@ -136,7 +136,7 @@ export function Footer() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold shadow-md transition-all active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-[0.98]"
               >
                 <MessageSquare className="w-3.5 h-3.5 fill-white" />
                 <span>Chat with Senior CA</span>
@@ -144,16 +144,16 @@ export function Footer() {
             </div>
           </div>
 
-          {/* COLUMN 2: Specialized CA Litigation (2 cols) */}
-          <div className="lg:col-span-2 space-y-3.5">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
+          {/* COLUMN 2: Specialized CA Litigation (2 cols on lg, 1 col on mobile) */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-2 space-y-3 sm:space-y-3.5">
+            <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
               Specialized Litigation
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2 text-[11.5px] sm:text-xs text-slate-400">
               <li>
                 <Link
                   href="/services/specialized/msme-payment-recovery"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   MSME Payment Recovery
                 </Link>
@@ -161,7 +161,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/specialized/export-gst-refund"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Export GST Refunds (LUT)
                 </Link>
@@ -169,7 +169,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/specialized/income-tax-assessment"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Income Tax Scrutiny (143/148)
                 </Link>
@@ -177,7 +177,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/specialized/inverted-duty-refund"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Inverted Duty GST Refunds
                 </Link>
@@ -185,7 +185,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/specialized/search-seizure-cases"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Search &amp; Seizure Defense
                 </Link>
@@ -193,7 +193,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/specialized/trademark-litigation"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Trademark &amp; IP Disputes
                 </Link>
@@ -201,16 +201,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* COLUMN 3: Core Corporate Solutions (2 cols) */}
-          <div className="lg:col-span-2 space-y-3.5">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
+          {/* COLUMN 3: Core Corporate Solutions (2 cols on lg, 1 col on mobile) */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-2 space-y-3 sm:space-y-3.5">
+            <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
               Corporate Solutions
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2 text-[11.5px] sm:text-xs text-slate-400">
               <li>
                 <Link
                   href="/services/private-limited-company"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Pvt Ltd Company Setup
                 </Link>
@@ -218,7 +218,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/llp-registration"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   LLP Registration
                 </Link>
@@ -226,7 +226,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/gst-registration"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   GST Registration &amp; Returns
                 </Link>
@@ -234,7 +234,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/corporate-tax-filing"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Corporate Tax Filing (ITR-6)
                 </Link>
@@ -242,7 +242,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/mca-annual-filing"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   MCA &amp; ROC Annual Compliance
                 </Link>
@@ -250,7 +250,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/virtual-cfo"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Virtual CFO Retainer
                 </Link>
@@ -258,16 +258,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* COLUMN 4: Turnkey Packages (2 cols) */}
-          <div className="lg:col-span-2 space-y-3.5">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
+          {/* COLUMN 4: Turnkey Packages (2 cols on lg, 1 col on mobile) */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-2 space-y-3 sm:space-y-3.5">
+            <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
               Retainer Packages
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2 text-[11.5px] sm:text-xs text-slate-400">
               <li>
                 <Link
                   href="/packages/startup-package"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Startup Package
                 </Link>
@@ -275,7 +275,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/packages/compliance"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Compliance Package
                 </Link>
@@ -283,7 +283,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/packages/accounting"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Accounting &amp; Bookkeeping
                 </Link>
@@ -291,7 +291,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/packages/virtual-cfo"
-                  className="hover:text-[#EA8932] transition-colors"
+                  className="hover:text-[#EA8932] transition-colors leading-snug block"
                 >
                   Virtual CFO Package
                 </Link>
@@ -299,7 +299,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/#packages"
-                  className="hover:text-[#EA8932] transition-colors font-medium text-slate-300"
+                  className="hover:text-[#EA8932] transition-colors font-medium text-slate-300 leading-snug block"
                 >
                   Custom Package Builder &rarr;
                 </Link>
@@ -307,39 +307,39 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* COLUMN 5: Quick Links & Firm (2 cols) */}
-          <div className="lg:col-span-2 space-y-3.5">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
+          {/* COLUMN 5: Quick Links & Firm (2 cols on lg, 1 col on mobile) */}
+          <div className="col-span-1 md:col-span-1 lg:col-span-2 space-y-3 sm:space-y-3.5">
+            <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white border-b border-slate-800 pb-2">
               Quick Links
             </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
+            <ul className="space-y-2 text-[11.5px] sm:text-xs text-slate-400">
               <li>
-                <Link href="/about" className="hover:text-[#EA8932] transition-colors">
+                <Link href="/about" className="hover:text-[#EA8932] transition-colors leading-snug block">
                   About 1Tax
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-[#EA8932] transition-colors">
+                <Link href="/blog" className="hover:text-[#EA8932] transition-colors leading-snug block">
                   Knowledge &amp; Insights
                 </Link>
               </li>
               <li>
-                <Link href="/faqs" className="hover:text-[#EA8932] transition-colors">
+                <Link href="/faqs" className="hover:text-[#EA8932] transition-colors leading-snug block">
                   Frequently Asked Questions
                 </Link>
               </li>
               <li>
-                <Link href="/locations" className="hover:text-[#EA8932] transition-colors">
+                <Link href="/locations" className="hover:text-[#EA8932] transition-colors leading-snug block">
                   Pan-India Locations
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#EA8932] transition-colors">
+                <Link href="/contact" className="hover:text-[#EA8932] transition-colors leading-snug block">
                   Contact Office
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="hover:text-[#EA8932] transition-colors font-medium text-[#EA8932]">
+                <Link href="/#contact" className="hover:text-[#EA8932] transition-colors font-medium text-[#EA8932] leading-snug block">
                   Request Callback &rarr;
                 </Link>
               </li>
@@ -352,8 +352,8 @@ export function Footer() {
           3. STATUTORY ICAI REGULATORY DISCLAIMER
       ───────────────────────────────────────────────────────────── */}
       <div className="border-t border-slate-800/80 bg-[#051119]">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 text-[11px] leading-relaxed text-slate-400">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="p-3.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 text-[10.5px] sm:text-[11px] leading-relaxed text-slate-400">
             <span className="font-bold text-slate-300 block mb-1">
               Regulatory Compliance &bull; The Institute of Chartered Accountants of India (ICAI):
             </span>
@@ -370,13 +370,13 @@ export function Footer() {
       {/* ─────────────────────────────────────────────────────────────
           4. COPYRIGHT & LEGAL POLICY LINKS
       ───────────────────────────────────────────────────────────── */}
-      <div className="border-t border-slate-800 bg-[#040C12] text-xs text-slate-500 py-5">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-center sm:text-left text-[11px] sm:text-xs">
+      <div className="border-t border-slate-800 bg-[#040C12] text-xs text-slate-500 py-4 sm:py-5">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-center sm:text-left text-[11px] sm:text-xs text-slate-400 sm:text-slate-500">
             &copy; {currentYear} 1Tax India. All Rights Reserved. Chartered Accountants Firm.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-6 gap-y-1.5 text-[11px] sm:text-xs">
             <Link
               href="/privacy-policy"
               className="hover:text-slate-300 transition-colors"

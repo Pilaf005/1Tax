@@ -15,24 +15,24 @@ export function PackagesSection() {
       {/* ─────────────────────────────────────────────────────────────
           1. SECTION HEADER AREA
       ───────────────────────────────────────────────────────────── */}
-      <div className="text-center max-w-4xl mx-auto mb-9 sm:mb-11">
+      <div className="text-center max-w-4xl mx-auto mb-7 sm:mb-11">
         {/* Eyebrow Pill */}
         <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-2xs"
+          className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4 border shadow-2xs"
           style={{
             backgroundColor: "var(--color-primary-muted)",
             borderColor: "var(--color-primary-light)",
             color: "var(--color-primary-dark)",
           }}
         >
-          <Sparkles size={14} className="text-[#EA8932]" />
+          <Sparkles size={13} className="text-[#EA8932]" />
           <span>Turnkey Growth Retainers</span>
         </div>
 
         {/* Main Headline */}
         <h2
           id="packages-heading"
-          className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-tight mb-4"
+          className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-snug sm:leading-tight mb-2.5 sm:mb-4"
           style={{ color: "var(--color-secondary-dark)" }}
         >
           Packages Built for{" "}
@@ -41,38 +41,38 @@ export function PackagesSection() {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-normal text-slate-600">
+        <p className="text-xs sm:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto font-normal text-slate-600">
           From day-one incorporation to audit-proof compliance and fractional
           CFO leadership - fixed fees, dedicated CAs, and zero hidden charges.
         </p>
 
-        {/* 3 Trust Verification Chips */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium text-slate-600">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
-            <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-            <span className="font-semibold text-slate-800">
-              100% CA Partner Handled
+        {/* 3 Trust Verification Chips (Same row on mobile, non-scrollable) */}
+        <div className="mt-4 sm:mt-6 grid grid-cols-3 sm:flex sm:flex-wrap items-center justify-center gap-1.5 sm:gap-6 text-slate-600 max-w-sm sm:max-w-none mx-auto">
+          <div className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
+            <CheckCircle2 size={13} className="text-emerald-600 shrink-0 sm:w-4 sm:h-4" />
+            <span className="font-semibold text-slate-800 text-[10px] sm:text-sm whitespace-nowrap">
+              100% CA <span className="hidden sm:inline">Partner </span>Handled
             </span>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
-            <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-            <span className="font-semibold text-slate-800">
-              Fixed Transparent Pricing
+          <div className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
+            <CheckCircle2 size={13} className="text-emerald-600 shrink-0 sm:w-4 sm:h-4" />
+            <span className="font-semibold text-slate-800 text-[10px] sm:text-sm whitespace-nowrap">
+              Fixed <span className="hidden sm:inline">Transparent </span>Pricing
             </span>
           </div>
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
-            <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-            <span className="font-semibold text-slate-800">
-              Custom Package Builder
+          <div className="inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-slate-200/80 shadow-2xs">
+            <CheckCircle2 size={13} className="text-emerald-600 shrink-0 sm:w-4 sm:h-4" />
+            <span className="font-semibold text-slate-800 text-[10px] sm:text-sm whitespace-nowrap">
+              Custom <span className="hidden sm:inline">Package </span>Builder
             </span>
           </div>
         </div>
       </div>
 
       {/* ─────────────────────────────────────────────────────────────
-          2. 4-COLUMN COMPACT VISUAL PACKAGES GRID (SMALL HEIGHT)
+          2. 4-COLUMN VISUAL PACKAGES (Swipe Carousel on Mobile, Grid on Desktop)
       ───────────────────────────────────────────────────────────── */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch mb-0">
+      <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 items-stretch mb-0 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none -mx-4 px-6 sm:-mx-6 sm:px-8 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-8 pt-1 pb-4 md:py-0">
         {packages.map((pkg) => {
           const isPopular = pkg.isPopular;
           const targetUrl = `/packages/${pkg.slug}`;
@@ -82,7 +82,7 @@ export function PackagesSection() {
               key={pkg.id}
               href={targetUrl}
               scroll={true}
-              className="group relative bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(12,34,46,0.05)] hover:shadow-[0_16px_32px_rgba(12,34,46,0.12)] hover:-translate-y-1.5 hover:border-slate-300 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer"
+              className="group relative bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-[0_2px_12px_rgba(12,34,46,0.05)] hover:shadow-[0_16px_32px_rgba(12,34,46,0.12)] hover:-translate-y-1.5 hover:border-slate-300 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer w-[82vw] max-w-[310px] shrink-0 snap-start md:w-auto md:max-w-none select-none my-1"
             >
               {/* Full-Bleed Top Artwork (No top/left/right padding & No badges) */}
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-t-2xl sm:rounded-t-3xl bg-[#0C222E]">

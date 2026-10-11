@@ -41,24 +41,24 @@ export function FAQSection() {
       {/* ─────────────────────────────────────────────────────────────
           1. SECTION HEADER
       ───────────────────────────────────────────────────────────── */}
-      <div className="text-center max-w-3xl mx-auto mb-9 sm:mb-11">
+      <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-11">
         {/* Eyebrow Pill */}
         <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-4 border shadow-2xs"
+          className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4 border shadow-2xs"
           style={{
             backgroundColor: "var(--color-primary-muted)",
             borderColor: "var(--color-primary-light)",
             color: "var(--color-primary-dark)",
           }}
         >
-          <Sparkles size={14} className="text-[#EA8932]" />
+          <Sparkles size={13} className="text-[#EA8932]" />
           <span>Got Questions? We Have Answers</span>
         </div>
 
         {/* Main Headline */}
         <h2
           id="faq-section-heading"
-          className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-tight mb-4"
+          className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-snug sm:leading-tight mb-2.5 sm:mb-4"
           style={{ color: "var(--color-secondary-dark)" }}
         >
           Frequently Asked{" "}
@@ -66,7 +66,7 @@ export function FAQSection() {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg leading-relaxed text-slate-600">
+        <p className="text-xs sm:text-base lg:text-lg leading-relaxed text-slate-600">
           Clear, straightforward answers about our Senior CA advisory, fixed fee
           structures, litigation response, and 100% faceless delivery.
         </p>
@@ -96,15 +96,15 @@ export function FAQSection() {
                 id={headingId}
                 aria-expanded={isOpen}
                 aria-controls={panelId}
-                className="w-full p-5 sm:p-6 lg:p-7 text-left flex items-start justify-between gap-4 cursor-pointer focus:outline-none"
+                className="w-full p-4 sm:p-6 lg:p-7 text-left flex items-start justify-between gap-3 sm:gap-4 cursor-pointer focus:outline-none"
               >
-                <div className="space-y-2 flex-1">
+                <div className="space-y-1.5 sm:space-y-2 flex-1">
                   {/* Top Badges: Category & SLA */}
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200/60">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                    <span className="text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 sm:px-2.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200/60">
                       {faq.tag}
                     </span>
-                    <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200/60 inline-flex items-center gap-1">
+                    <span className="text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 sm:px-2.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200/60 inline-flex items-center gap-1">
                       <Clock size={11} className="text-[#EA8932]" />
                       {faq.sla}
                     </span>
@@ -112,7 +112,7 @@ export function FAQSection() {
 
                   {/* Question Text */}
                   <h3
-                    className="text-base sm:text-lg lg:text-xl font-bold transition-colors leading-snug"
+                    className="text-sm sm:text-lg lg:text-xl font-bold transition-colors leading-snug"
                     style={{
                       color: isOpen ? "#EA8932" : "var(--color-secondary-dark)",
                     }}
@@ -123,13 +123,13 @@ export function FAQSection() {
 
                 {/* Chevron Indicator */}
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 mt-1 ${
+                  className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 mt-1 ${
                     isOpen
                       ? "bg-[#EA8932]/10 text-[#EA8932] rotate-180"
                       : "bg-slate-100 text-slate-500"
                   }`}
                 >
-                  <ChevronDown size={18} />
+                  <ChevronDown size={16} className="sm:w-[18px] sm:h-[18px]" />
                 </div>
               </button>
 

@@ -60,17 +60,17 @@ export function ProcessTimeline() {
       {/* ─────────────────────────────────────────────────────────────
           1. SECTION HEADER AREA
       ───────────────────────────────────────────────────────────── */}
-      <div className="text-center max-w-4xl mx-auto mb-7 sm:mb-9">
+      <div className="text-center max-w-4xl mx-auto mb-6 sm:mb-9">
         {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider bg-orange-50 border border-orange-200/80 text-[#C25E0A] shadow-2xs mb-3.5">
-          <Sparkles size={13} className="text-[#EA8932]" />
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-orange-50 border border-orange-200/80 text-[#C25E0A] shadow-2xs mb-2.5 sm:mb-3.5">
+          <Sparkles size={12} className="text-[#EA8932]" />
           <span>HOW IT WORKS &bull; 5-STEP WORKFLOW</span>
         </div>
 
         {/* Main Headline */}
         <h2
           id="process-heading"
-          className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-tight mb-3.5"
+          className="text-2xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight leading-snug sm:leading-tight mb-2.5 sm:mb-3.5"
           style={{ color: "var(--color-secondary-dark)" }}
         >
           From Intake to Resolution in{" "}
@@ -78,7 +78,7 @@ export function ProcessTimeline() {
         </h2>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-normal text-slate-600">
+        <p className="text-xs sm:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto font-normal text-slate-600">
           No bureaucratic paperwork, no junior call center delays. A
           transparent, CA-led roadmap designed for modern businesses.
         </p>
@@ -136,37 +136,47 @@ export function ProcessTimeline() {
       {/* ─────────────────────────────────────────────────────────────
           3. REASSURANCE BENCHMARK METRIC STRIP
       ───────────────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-7 shadow-sm mb-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
-          <div className="pt-2 md:pt-0 px-2 sm:px-4">
-            <p className="text-2xl sm:text-3xl font-extrabold text-[#EA8932] tracking-tight tabular-nums">
+      {/* ─────────────────────────────────────────────────────────────
+          3. REASSURANCE BENCHMARK METRIC STRIP
+      ───────────────────────────────────────────────────────────── */}
+      <div className="bg-white rounded-2xl border border-slate-200/90 p-5 sm:p-7 shadow-sm mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-3 sm:gap-6 text-center md:divide-x md:divide-slate-100">
+          {/* Cell 1: 15-Min */}
+          <div className="flex flex-col justify-center px-2 sm:px-4">
+            <p className="text-xl sm:text-3xl font-extrabold text-[#EA8932] tracking-tight tabular-nums">
               15-Min
             </p>
-            <p className="text-xs font-semibold text-slate-500 mt-0.5">
+            <p className="text-[11px] sm:text-xs font-semibold text-slate-500 mt-1 leading-snug">
               Average Response SLA
             </p>
           </div>
-          <div className="pt-4 md:pt-0 px-2 sm:px-4">
-            <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">
+
+          {/* Cell 2: 28 States */}
+          <div className="flex flex-col justify-center px-2 sm:px-4">
+            <p className="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">
               28 States
             </p>
-            <p className="text-xs font-semibold text-slate-500 mt-0.5">
+            <p className="text-[11px] sm:text-xs font-semibold text-slate-500 mt-1 leading-snug">
               Faceless Digital Delivery
             </p>
           </div>
-          <div className="pt-4 md:pt-0 px-2 sm:px-4">
-            <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">
+
+          {/* Cell 3: 100% Direct */}
+          <div className="flex flex-col justify-center px-2 sm:px-4 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100">
+            <p className="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight tabular-nums">
               100% Direct
             </p>
-            <p className="text-xs font-semibold text-slate-500 mt-0.5">
+            <p className="text-[11px] sm:text-xs font-semibold text-slate-500 mt-1 leading-snug">
               Partner Accountability
             </p>
           </div>
-          <div className="pt-4 md:pt-0 px-2 sm:px-4">
-            <p className="text-2xl sm:text-3xl font-extrabold text-emerald-600 tracking-tight tabular-nums">
+
+          {/* Cell 4: Zero Surprise */}
+          <div className="flex flex-col justify-center px-2 sm:px-4 pt-3 md:pt-0 border-t md:border-t-0 border-slate-100">
+            <p className="text-xl sm:text-3xl font-extrabold text-emerald-600 tracking-tight tabular-nums">
               Zero Surprise
             </p>
-            <p className="text-xs font-semibold text-slate-500 mt-0.5">
+            <p className="text-[11px] sm:text-xs font-semibold text-slate-500 mt-1 leading-snug">
               Statutory Fee Markups
             </p>
           </div>
@@ -197,34 +207,34 @@ export function ProcessTimeline() {
         />
 
         {/* Content container — Compact vertical height */}
-        <div className="relative z-10 px-6 py-6 sm:px-8 sm:py-7 lg:px-10 lg:py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5 sm:gap-6">
+        <div className="relative z-10 px-5 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
           {/* Simple One-Liner */}
           <div className="max-w-2xl text-center lg:text-left">
-            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-white tracking-tight leading-snug">
+            <h3 className="text-lg sm:text-2xl lg:text-[26px] font-extrabold text-white tracking-tight leading-snug">
               Have an urgent tax notice, filing deadline, or{" "}
               <span className="text-[#EA8932]">incorporation inquiry?</span>
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 font-normal mt-1.5">
+            <p className="text-[11px] sm:text-sm text-slate-300 font-normal mt-1 sm:mt-1.5">
               Speak directly with a Senior Chartered Accountant within 15 minutes.
             </p>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-3 shrink-0">
             <a
               href="#consultation-form"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-[#EA8932] hover:bg-[#D47522] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 px-4.5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-[#EA8932] hover:bg-[#D47522] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-[0.98]"
             >
               <span>Start 60-Sec Intake</span>
-              <ArrowRight size={15} />
+              <ArrowRight size={14} />
             </a>
             <a
               href={`https://wa.me/${WA_NUMBER}?text=${waProcessText}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-[#25D366] text-white text-xs sm:text-sm font-bold shadow-md transition-all hover:bg-[#20ba5a] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 px-4.5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-[#25D366] text-white text-xs sm:text-sm font-bold shadow-md transition-all hover:bg-[#20ba5a] active:scale-[0.98]"
             >
-              <MessageSquare size={15} className="fill-white" />
+              <MessageSquare size={14} className="fill-white" />
               <span>Chat on WhatsApp</span>
             </a>
           </div>
