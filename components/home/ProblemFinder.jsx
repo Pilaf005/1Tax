@@ -244,7 +244,11 @@ export function ProblemFinder() {
           className="text-2xl sm:text-3xl lg:text-[42px] font-extrabold tracking-tight leading-snug sm:leading-tight mb-2.5 sm:mb-4"
           style={{ color: "var(--color-secondary-dark)" }}
         >
-          What Business or Tax Challenge Are You Facing Today?
+          What{" "}
+          <span className="text-[#EA8932]" style={{ color: "var(--color-primary)" }}>
+            Business or Tax Challenge
+          </span>{" "}
+          Are You Facing Today?
         </h2>
 
         <p
