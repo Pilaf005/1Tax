@@ -13,6 +13,12 @@ export function AppLayoutClient({ children }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [pathname]);
 
+  const isMaintenance = pathname === '/maintenance';
+
+  if (isMaintenance) {
+    return <main>{children}</main>;
+  }
+
   return (
     <>
       <Header />
