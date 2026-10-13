@@ -3,12 +3,22 @@ import { NextResponse } from "next/server";
 export function proxy(request) {
   const { pathname } = request.nextUrl;
 
-  // 1. Always allow direct access to maintenance page to prevent loops
+  // 1. Evaluate maintenance mode condition
+  // Enabled ONLY when MAINTENANCE_MODE=true AND not on a Vercel Preview environment
+  const isMaintenance =
+    process.env.MAINTENANCE_MODE?.toLowerCase() === "true" &&
+    process.env.VERCEL_ENV !== "preview";
+
+  // 2. Direct access to maintenance page
   if (pathname === "/maintenance") {
+    // If maintenance is disabled, redirect visitors to home
+    if (!isMaintenance) {
+      return NextResponse.redirect(new URL("/", request.url), 307);
+    }
     return NextResponse.next();
   }
 
-  // 2. Always allow static SEO & PWA metadata files
+  // 3. Always allow static SEO & PWA metadata files
   if (
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
@@ -17,12 +27,7 @@ export function proxy(request) {
     return NextResponse.next();
   }
 
-  // 3. Evaluate maintenance mode condition
-  // Enabled ONLY when MAINTENANCE_MODE=true AND not on a Vercel Preview environment
-  const isMaintenance =
-    process.env.MAINTENANCE_MODE?.toLowerCase() === "true" &&
-    process.env.VERCEL_ENV !== "preview";
-
+  // If maintenance mode is disabled, pass through normally
   if (!isMaintenance) {
     return NextResponse.next();
   }
@@ -45,14 +50,10 @@ export function proxy(request) {
     );
   }
 
-  // 5. Rewrite public web pages to /maintenance
+  // 5. Redirect public web pages to /maintenance (307 Temporary Redirect)
+  // This updates browser URL to /maintenance so AppLayoutClient skips Header and Footer
   const maintenanceUrl = new URL("/maintenance", request.url);
-  const response = NextResponse.rewrite(maintenanceUrl, {
-    status: 503,
-    statusText: "Service Unavailable",
-  });
-
-  response.headers.set("Retry-After", "3600");
+  const response = NextResponse.redirect(maintenanceUrl, 307);
   response.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
 
   return response;
