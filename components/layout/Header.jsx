@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AnnouncementBar } from './AnnouncementBar';
@@ -5,9 +8,49 @@ import { NavDesktop } from './NavDesktop';
 import { NavMobile } from './NavMobile';
 
 export function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY =
+            window.scrollY || document.documentElement.scrollTop || 0;
+          const diff = currentScrollY - lastScrollY.current;
+
+          setIsScrolled(currentScrollY > 20);
+
+          // Near top: always keep visible
+          if (currentScrollY <= 20) {
+            setIsVisible(true);
+          } else if (diff > 8 && currentScrollY > 60) {
+            // Scrolling DOWN -> hide navbar & announcement strip
+            setIsVisible(false);
+          } else if (diff < -5) {
+            // Scrolling UP -> smoothly reveal navbar
+            setIsVisible(true);
+          }
+
+          lastScrollY.current = Math.max(0, currentScrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header
-      className="sticky top-0 z-40 w-full"
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ease-in-out ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${isScrolled ? 'shadow-md shadow-slate-900/5' : ''}`}
       style={{
         backgroundColor: 'var(--color-surface)',
         borderBottom: '1px solid var(--color-border)',
@@ -46,4 +89,3 @@ export function Header() {
     </header>
   );
 }
-

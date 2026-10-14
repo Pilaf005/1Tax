@@ -121,17 +121,17 @@ export function HeroSection() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 mb-7 sm:mb-8 lg:mb-10">
               {/* Primary Action */}
-              <a
-                href="#consultation-form"
+              <Link
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 sm:px-7 sm:py-4 text-sm sm:text-base font-bold text-white shadow-md transition-all hover:opacity-95 active:scale-98"
                 style={{
                   backgroundColor: "var(--color-primary)",
                   boxShadow: "var(--shadow-glow)",
                 }}
               >
-                <span>Get Free Consultation</span>
+                <span>Explore Our Services</span>
                 <ArrowRight size={16} />
-              </a>
+              </Link>
 
               {/* Secondary Action (WhatsApp) */}
               <a
